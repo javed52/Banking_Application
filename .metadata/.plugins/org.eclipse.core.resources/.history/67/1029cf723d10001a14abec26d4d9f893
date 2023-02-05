@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Login Page</title>
+	<link rel = "stylesheet" type = "text/css" href = "style.css">
+<body>
+<form action="Login">
+<table>
+<tr><td>CUSTOMER ID : </td>
+<td><input type="text"  name="custid" placeholder="Enter the Customer Id" required="required" /></td>
+</tr>
+<tr><td>PASSWORD :</td>
+<td><input type="password"  name="pwd" placeholder="Enter the Password" required="required" /></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" style="background-color:grey;color:white;width:150px;height:40px;" value="Login" /></td>
+</tr>
+</table>
+</form>
+</body>
+</head>
+</html>

@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Loan Success Message</title>
+</head>
+<body>
+<h1> Dear customer <%=session.getAttribute("name") %> thank you for applying the <%= session.getAttribute("loan")  %> Loan</h1>
+</body>
+</html>

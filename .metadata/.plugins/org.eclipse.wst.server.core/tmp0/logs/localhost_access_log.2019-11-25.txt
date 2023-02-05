@@ -1,0 +1,17 @@
+127.0.0.1 - - [25/Nov/2019:10:13:57 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:13:58 +0530] "GET /Banking/ HTTP/1.1" 200 538
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:14:07 +0530] "GET /Banking/Login?custid=abc1&pwd=abc1 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:14:07 +0530] "GET /Banking/errorLogin.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:14:15 +0530] "GET /Banking/Login?custid=ABC1&pwd=ABC1 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:14:16 +0530] "GET /Banking/home.jsp HTTP/1.1" 200 267
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:14:19 +0530] "GET /Banking/changePassword.jsp HTTP/1.1" 200 512
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:14:31 +0530] "GET /Banking/ChangePassword?npwd=ABC2&cnpwd=2ABC HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:14:31 +0530] "GET /Banking/errorChangePassword.jsp HTTP/1.1" 200 602
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:14:44 +0530] "GET /Banking/ChangePassword?npwd=ABC2&cnpwd=ABC2 HTTP/1.1" 500 1840
+127.0.0.1 - - [25/Nov/2019:10:20:38 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:20:39 +0530] "GET /Banking/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:20:48 +0530] "GET /Banking/Login?custid=ABC1&pwd=ABC1 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:20:49 +0530] "GET /Banking/home.jsp HTTP/1.1" 200 267
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:20:50 +0530] "GET /Banking/changePassword.jsp HTTP/1.1" 200 512
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:20:58 +0530] "GET /Banking/ChangePassword?npwd=ABC2&cnpwd=ABC2 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:10:20:58 +0530] "GET /Banking/changePasswordSuccess.html HTTP/1.1" 200 205

@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Login Error Page</title>
+</head>
+<body>
+<h2 align= "center">Invalid Customer Id. Please Try AGAIN..!!!!!!</h2>
+<form action="Login">
+<table>
+<tr><td>CUSTOMER ID : </td>
+<td><input type="text" border: 2px solid red; name="custid" placeholder="Enter the Customer Id" required="required" /></td>
+</tr>
+<tr><td>PASSWORD :</td>
+<td><input type="password" border: 2px solid red; name="pwd" placeholder="Enter the Password" required="required" /></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" style="background-color:grey;color:white;width:150px;height:40px;" value="Login" /></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

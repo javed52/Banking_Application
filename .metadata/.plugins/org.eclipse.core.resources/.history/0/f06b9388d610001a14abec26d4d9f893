@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<html>
+<head>
+<title>Fill Detail</title>
+	</head>
+<body>
+<h1 align ="center"><%=request.getParameter("loan") %></h1>
+<h2>Enter your details : </h2>
+<form action="success.jsp">
+<table>
+<tr><td>First Name : </td>
+<td><input type="text"  name="fname" placeholder="Enter the First Name" required="required" /></td>
+</tr>
+
+
+<tr><td>Last Name :</td>
+<td><input type="text"  name="lname" placeholder="Enter the Last Name" required="required" /></td>
+</tr>
+<tr>
+<td>Occupation :</td>
+<td><select> 
+<option>Student</option>
+<option>Govt. Employee</option>
+<option>Business</option>
+<option>Farmer</option>
+</select></td>
+</tr>
+<tr>
+<td>Amount :</td>
+<td><input type="text"  name="amt" placeholder="Enter the Amount" required="required" /></td>
+</tr>
+
+<tr>
+<td>Year :</td>
+<td><input type="text"  name="year" placeholder="Enter the time" required="required" /></td>
+</tr>
+
+<tr>
+<td>Salary :</td>
+<td><input type="text"  name="salary" placeholder="Enter your salary" required="required" /></td>
+</tr>
+
+<tr>
+<td> Gender <input type = "radio" name="g1" value="male"/>Male <input type = "radio" name="g1" value="female"/>Female</td>
+</tr>
+
+
+
+<tr>
+<td></td>
+<td><input type="submit"  value="Submit" /></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Apply Loan Page</title>
+</head>
+<body>
+<form>
+<input type="radio" name="homeloan" value=homeloan >Home Loan<br>
+<input type="radio" name="educationloan" value="educationloan" >Education Loan<br>
+<input type="radio" name="goldloan" value="goldloan" >Gold Loan<br>
+<input type="radio" name="personalloan" value="personalloan" >Personal Loan<br>
+<input type="radio" name="carloan" value="carloan" >Car Loan<br>
+<input type="radio" name="mediaclloan" value="medicalloan" >Medical Loan<br>
+<input type="submit" value="Submit">
+
+
+</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Login Page</title>
+	<link rel = "stylesheet" type = "text/css" href = "style.css">
+</head>
+<body>
+	<div class ="loginbox">
+	<img src="avatar.png" class="avatar">
+		<h1>login Here</h1>
+		<form action="Login">
+			<p>CUSTOMER ID</p>
+			<input type="text"  name="custid" placeholder="Enter the Customer Id" required="required" />
+			<p>PASSWORD</p>
+			<input type="password"  name="pwd" placeholder="Enter the Password" required="required" />
+			<input type="submit" value="Login" />
+			<a href = "#">Lost your password?</a><br>
+			<a href = "#">Don't have an account?</a>
+			
+		
+		</form>
+	</div>
+
+</body>
+</html>

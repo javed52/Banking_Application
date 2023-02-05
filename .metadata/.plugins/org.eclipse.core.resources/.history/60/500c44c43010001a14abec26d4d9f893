@@ -1,0 +1,217 @@
+package com.mvc.bankingapp;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Model 
+{
+	private String name;
+	private int acc_no;
+	private int balance;
+	private String cust_id;
+	private String pwd;
+	private String email;
+	private Connection conn = null;
+	private PreparedStatement pstmt = null;
+	private ResultSet res = null;
+	
+	
+	public String getName() 
+	{
+		return name;
+	}
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public int getAcc_no()
+	{
+		return acc_no;
+	}
+	public void setAcc_no(int acc_no) 
+	{
+		this.acc_no = acc_no;
+	}
+	public int getBalance()
+	{
+		return balance;
+	}
+	public void setBalance(int balance) 
+	{
+		this.balance = balance;
+	}
+	public String getCust_id() {
+		return cust_id;
+	}
+	public void setCust_id(String cust_id) 
+	{
+		this.cust_id = cust_id;
+	}
+	public String getPwd()
+	{
+		return pwd;
+	}
+	public void setPwd(String pwd) 
+	{
+		this.pwd = pwd;
+	}
+	public String getEmail()
+	{
+		return email;
+	}
+	public void setEmail(String email)
+	{
+		this.email = email;
+	}
+	
+	Model()
+	{
+		try
+		{
+			Class.forName("oracle.jdbc.OracleDriver");
+			conn =DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE", "system", "system");
+		}
+		catch (ClassNotFoundException | SQLException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean login()
+	{
+		try 
+		{
+			pstmt =conn.prepareStatement("select * from swiss_bank where cust_id=? and pwd=?");
+			pstmt.setString(1, cust_id);
+			pstmt.setString(2, pwd);
+			res  = pstmt.executeQuery();
+			if(res.next())
+			{
+				acc_no=res.getInt("ACC_NO");
+				name=res.getString("NAME");
+				return true;
+			}
+		} 
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if(pstmt!=null)
+			{
+				try 
+				{
+					pstmt.close();
+				} 
+				catch (SQLException e) 
+				{
+					e.printStackTrace();
+				}
+			}
+			if(res!=null)
+			{
+				try 
+				{
+					pstmt.close();
+				} 
+				catch (SQLException e) 
+				{
+					e.printStackTrace();
+				}
+			}
+			if(conn!=null)
+			{
+				try 
+				{
+					pstmt.close();
+				} 
+				catch (SQLException e) 
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+		return false;
+	}
+	
+	public boolean checkBalance()
+	{
+		try
+		{
+			pstmt = conn.prepareStatement("select * from swiss_bank where acc_no=?");
+			pstmt.setInt(1, acc_no);
+			res = pstmt.executeQuery();
+			if(res.next())
+			{
+				balance=res.getInt("balance");
+				return true;
+			}
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			try
+			{
+				if(res!=null)
+					res.close();
+				if(pstmt!=null)
+					pstmt.close();
+				if(conn!=null)
+					conn.close();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
+	
+	public boolean changePassword()
+	{
+		try 
+		{
+			pstmt = conn.prepareStatement("update swiss_bank set pwd = ? where acc_no=?");
+			pstmt.setString(1, pwd);
+			pstmt.setInt(2, acc_no);
+			int result = pstmt.executeUpdate();
+			
+			if(result==1)
+			{
+				return true;
+			}
+		
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			try
+			{
+				if(pstmt!=null)
+					pstmt.close();
+				if(conn!=null)
+					conn.close();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		return false;
+		
+	}
+	
+	
+	
+}
